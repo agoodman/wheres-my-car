@@ -3,12 +3,11 @@
 //  WheresMyCar
 //
 //  Created by Aubrey Goodman on 4/15/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Migrant Studios. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
-#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -16,15 +15,17 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-@synthesize mainViewController = _mainViewController;
+@synthesize startLocationViewController = startLocationViewController;
+@synthesize manager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.manager = [[CLLocationManager alloc] init];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    self.window.rootViewController = self.mainViewController;
-    self.mainViewController.managedObjectContext = self.managedObjectContext;
+    self.startLocationViewController = [[StartLocationViewController alloc] initWithNibName:@"StartLocationView" bundle:[NSBundle mainBundle]];
+    [self.window addSubview:self.startLocationViewController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

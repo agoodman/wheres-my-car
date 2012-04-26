@@ -3,7 +3,7 @@
 //  WheresMyCar
 //
 //  Created by Aubrey Goodman on 4/15/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Migrant Studios. All rights reserved.
 //
 
 #import "FlipsideViewController.h"
